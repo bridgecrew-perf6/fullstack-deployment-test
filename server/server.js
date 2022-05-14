@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const db = require("./config/keys").mongoURI;
+const db = process.env.MONGO_URI;
 
 mongoose
   .connect(db)
