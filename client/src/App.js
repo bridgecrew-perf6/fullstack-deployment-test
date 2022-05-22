@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import AppNavBar from "./components/AppNavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "reactstrap";
+import "./App.css";
+import ShoppingList from "./components/ShoppingList";
+import ItemModal from "./components/ItemModal";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          FULLSTACK DEPLOYMENT TEST
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <AppNavBar />
+        <Container>
+          <ItemModal />
+          <ShoppingList />
+        </Container>
+      </div>
+    </Provider>
   );
 }
 
