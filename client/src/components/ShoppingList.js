@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteItem, getItems } from '../actions/itemActions'
@@ -9,7 +9,7 @@ const ShoppingList = () => {
 
     useEffect(() => {
         dispatch(getItems())
-    }, [])
+    }, [dispatch])
 
     const removeItem = (id) => {
         dispatch(deleteItem(id))
