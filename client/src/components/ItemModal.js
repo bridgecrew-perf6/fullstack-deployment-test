@@ -27,7 +27,7 @@ const ItemModal = () => {
 
   return (
       <div>
-          <Button onClick={toggle}>Add Item</Button>
+          <Button className='mb-5' block onClick={toggle}>Add Item</Button>
           <Modal isOpen={modal} toggle={toggle}>
               <ModalHeader>Add to Shopping List</ModalHeader>
               <ModalBody>
