@@ -41,8 +41,6 @@ const RegisterModal = () => {
     };
 
     dispatch(register(newUser));
-
-    // toggle();
   };
 
   useEffect(() => {
@@ -51,9 +49,8 @@ const RegisterModal = () => {
     } else {
       setMsg(null);
     }
-
   }, [error]);
-  
+
   useEffect(() => {
     if (modal) {
       if (isAuthenticated) {

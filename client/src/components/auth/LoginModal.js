@@ -18,7 +18,6 @@ import { clearErrors } from "../../actions/errorActions";
 const LoginModal = () => {
   const dispatch = useDispatch();
   const [modal, setModal] = useState(false);
-  //   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState(null);
@@ -66,15 +65,6 @@ const LoginModal = () => {
           {msg ? <Alert color="danger">{msg}</Alert> : null}
           <Form onSubmit={submit}>
             <FormGroup>
-              {/* <Label for="name">Name</Label>
-              <Input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Name"
-                className="mb-3"
-                onChange={(e) => setName(e.target.value)}
-              /> */}
               <Label for="email">Email</Label>
               <Input
                 type="email"
