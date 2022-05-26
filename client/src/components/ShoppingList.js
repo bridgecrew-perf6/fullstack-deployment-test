@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteItem, getItems } from '../actions/itemActions'
 
 const ShoppingList = () => {
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const items = useSelector(state => state.item.items)
     const dispatch = useDispatch()
 
@@ -20,6 +21,7 @@ const ShoppingList = () => {
         <ListGroup>
             {items.map(({ _id, name }) => (
                 <ListGroupItem key={_id}>
+                    { isAuthenticated ?  
                     <Button 
                         className='remove-btn' 
                         color='danger'
@@ -27,7 +29,8 @@ const ShoppingList = () => {
                         onClick={() => removeItem(_id)}
                     >
                         &times;
-                    </Button>
+                    </Button> : null
+                    }
                     {name}
                 </ListGroupItem>
             ))}
