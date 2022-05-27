@@ -11,7 +11,7 @@ import { returnErrors } from "./errorActions";
 const serverURL =
   process.env.NODE_ENV === "production"
     ? "https://fullstack-deployment-test-serv.herokuapp.com/api/items"
-    : "/api/items";
+    : "http://localhost:5000/api/items";
 
 export const getItems = () => (dispatch) => {
   dispatch(setItemsLoading());
