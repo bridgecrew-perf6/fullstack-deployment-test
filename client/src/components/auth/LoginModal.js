@@ -39,10 +39,12 @@ const LoginModal = () => {
   };
 
   useEffect(() => {
-    if (error.id === "LOGIN_FAIL") {
-      setMsg(error.msg.msg);
-    } else {
-      setMsg(null);
+    if (error) {
+      if (error.id === "LOGIN_FAIL") {
+        setMsg(error.msg.msg);
+      } else {
+        setMsg(null);
+      }
     }
   }, [error]);
 

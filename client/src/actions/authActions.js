@@ -14,7 +14,7 @@ import {
 const serverURL =
   process.env.NODE_ENV === "production"
     ? "https://fullstack-deployment-test-serv.herokuapp.com/api"
-    : "/api";
+    : "http://localhost:5000/api";
 
 // check token & load user
 export const loadUser = () => (dispatch, getState) => {
