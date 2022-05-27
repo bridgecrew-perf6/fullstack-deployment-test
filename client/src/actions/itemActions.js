@@ -10,8 +10,8 @@ import { returnErrors } from "./errorActions";
 
 const serverURL =
   process.env.NODE_ENV === "production"
-    ? "https://fullstack-deployment-test-serv.herokuapp.com/api/items"
-    : "http://localhost:5000/api/items";
+    ? "https://fullstack-deployment-test-serv.herokuapp.com/api"
+    : "http://localhost:5000/api";
 
 export const getItems = () => (dispatch) => {
   dispatch(setItemsLoading());
@@ -30,7 +30,7 @@ export const getItems = () => (dispatch) => {
 
 export const addItem = (item) => (dispatch, getState) => {
   axios
-    .post(serverURL, item, tokenConfig(getState))
+    .post(`${serverURL}/items`, item, tokenConfig(getState))
     .then((res) =>
       dispatch({
         type: ADD_ITEM,
@@ -44,7 +44,7 @@ export const addItem = (item) => (dispatch, getState) => {
 
 export const deleteItem = (id) => (dispatch, getState) => {
   axios
-    .delete(`${serverURL}/${id}`, tokenConfig(getState))
+    .delete(`${serverURL}/items/${id}`, tokenConfig(getState))
     .then((res) =>
       dispatch({
         type: DELETE_ITEM,
