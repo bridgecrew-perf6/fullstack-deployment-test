@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path")
 const mongoose = require("mongoose");
-// process.env["NODE_CONFIG_DIR"] =  path.resolve(__dirname, "config");
+process.env["NODE_CONFIG_DIR"] =  path.resolve(__dirname, "config");
 // process.env["NODE_CONFIG_DIR"] = __dirname + "/config/";
 const config = require("config")
 
