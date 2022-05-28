@@ -2,13 +2,16 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path")
 const mongoose = require("mongoose");
-process.env["NODE_CONFIG_DIR"] = __dirname + "/config/";
+process.env["NODE_CONFIG_DIR"] =  path.resolve(__dirname, "config");
+// process.env["NODE_CONFIG_DIR"] = __dirname + "/config/";
 const config = require("config")
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+// console.log("DIRECTORY:", path.resolve(__dirname, "config"));
 
 const db = process.env.MONGO_URI || config.get('mongoURI');
 
