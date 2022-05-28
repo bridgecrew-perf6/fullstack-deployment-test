@@ -5,7 +5,7 @@ const initialState = {
   loading: false
 };
 
-export default itemReducer = (state = initialState, action) => {
+const itemReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ITEMS:
       return {
@@ -32,3 +32,5 @@ export default itemReducer = (state = initialState, action) => {
       return state;
   }
 }
+
+export default itemReducer
