@@ -16,7 +16,7 @@ const serverURL =
 export const getItems = () => (dispatch) => {
   dispatch(setItemsLoading());
   axios
-    .get(serverURL)
+    .get(`${serverURL}/items`)
     .then((res) =>
       dispatch({
         type: GET_ITEMS,
