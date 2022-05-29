@@ -1,9 +1,9 @@
 const express = require("express");
 
 const router = express.Router();
-const auth = require("../../middleware/auth")
+const auth = require("../../middleware/auth");
 
-const Item = require("../../models/Item");
+const Item = require("../../models/item");
 
 // GET api/items // get all
 router.get("/", (req, res) => {
