@@ -23,7 +23,7 @@ router.post("/", (req, res) => {
 
       jwt.sign(
         { id: user.id },
-        config.get("jwtSecret"),
+        process.env.JWT_SECRET || config.get("jwtSecret"),
         { expiresIn: 3600 },
         (err, token) => {
           if (err) throw err;
@@ -42,10 +42,10 @@ router.post("/", (req, res) => {
 });
 
 // GET api/auth/user // get user data (private)
-router.get('/user', auth, (req, res) => {
+router.get("/user", auth, (req, res) => {
   User.findById(req.user.id)
-    .select('-password')
-    .then(user => res.json(user));
+    .select("-password")
+    .then((user) => res.json(user));
 });
 
 module.exports = router;
