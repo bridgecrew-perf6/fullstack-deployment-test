@@ -26,7 +26,7 @@ const AppNavBar = () => {
     <Fragment>
       <NavItem>
         <span className="navbar-text mr-3">
-          <strong>{ user ? `Welcome, ${user.name}` : "" }</strong>
+          <strong>{user ? `Welcome, ${user.name}` : ""}</strong>
         </span>
       </NavItem>
       <NavItem>
@@ -53,8 +53,8 @@ const AppNavBar = () => {
           <NavbarBrand href="/">Shopping List</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="ms-auto" navbar>
-              { isAuthenticated ? authLinks : guestLinks }
+            <Nav className="ms-auto align-items-center" navbar>
+              {isAuthenticated ? authLinks : guestLinks}
             </Nav>
           </Collapse>
         </Container>

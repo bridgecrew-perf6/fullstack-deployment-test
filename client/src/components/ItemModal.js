@@ -37,7 +37,11 @@ const ItemModal = () => {
   return (
     <div>
       {isAuthenticated ? (
-        <Button className="mb-5" block onClick={toggle}>
+        <Button
+          className="mb-5 mx-auto"
+          style={{ display: "block", width: "fit-content" }}
+          onClick={toggle}
+        >
           Add Item
         </Button>
       ) : (
